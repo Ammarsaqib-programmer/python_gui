@@ -15,9 +15,6 @@ A modern Python GUI application to view Instagram profiles with enhanced feature
 - **Multiple Tabs**: Organized view of profile info and statistics
 - **Cross-Platform**: Works on Windows, macOS, and Linux
 
-## 📸 Screenshot
-(Add screenshot here after uploading)
-
 ## 🛠️ Installation
 
 1. Clone the repository:
