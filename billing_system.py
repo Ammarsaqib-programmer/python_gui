@@ -20,9 +20,9 @@ class BillApp:
         self.sanitizer = IntVar()
         self.mask = IntVar()
         self.hand_gloves = IntVar()
-        self.syrup = IntVar()
+        self.Panadol = IntVar()
         self.cream = IntVar()
-        self.thermal_gun = IntVar()
+        self.Risek = IntVar()
 
         # Grocery items
         self.rice = IntVar()
@@ -100,9 +100,9 @@ class BillApp:
         Entry(F2, width=10, textvariable=self.hand_gloves, font=('Times New Roman', 16, 'bold'),
               bd=5, relief=GROOVE).grid(row=2, column=1, padx=10, pady=10)
 
-        Label(F2, text="Syrup", font=('Times New Roman', 16, 'bold'), bg=self.bg_color, fg="Black") \
+        Label(F2, text="Panadol", font=('Times New Roman', 16, 'bold'), bg=self.bg_color, fg="Black") \
             .grid(row=3, column=0, padx=10, pady=10, sticky='W')
-        Entry(F2, width=10, textvariable=self.syrup, font=('Times New Roman', 16, 'bold'),
+        Entry(F2, width=10, textvariable=self.Panadol, font=('Times New Roman', 16, 'bold'),
               bd=5, relief=GROOVE).grid(row=3, column=1, padx=10, pady=10)
 
         Label(F2, text="Cream", font=('Times New Roman', 16, 'bold'), bg=self.bg_color, fg="Black") \
@@ -110,9 +110,9 @@ class BillApp:
         Entry(F2, width=10, textvariable=self.cream, font=('Times New Roman', 16, 'bold'),
               bd=5, relief=GROOVE).grid(row=4, column=1, padx=10, pady=10)
 
-        Label(F2, text="Thermal Gun", font=('Times New Roman', 16, 'bold'), bg=self.bg_color, fg="Black") \
+        Label(F2, text="Risek", font=('Times New Roman', 16, 'bold'), bg=self.bg_color, fg="Black") \
             .grid(row=5, column=0, padx=10, pady=10, sticky='W')
-        Entry(F2, width=10, textvariable=self.thermal_gun, font=('Times New Roman', 16, 'bold'),
+        Entry(F2, width=10, textvariable=self.Risek, font=('Times New Roman', 16, 'bold'),
               bd=5, relief=GROOVE).grid(row=5, column=1, padx=10, pady=10)
 
         # ----------------- Grocery Items Frame -----------------
@@ -249,11 +249,11 @@ class BillApp:
         sanitizer_price = self.sanitizer.get() * 2
         mask_price = self.mask.get() * 5
         hand_gloves_price = self.hand_gloves.get() * 12
-        syrup_price = self.syrup.get() * 30
+        Panadol_price = self.Panadol.get() * 30
         cream_price = self.cream.get() * 5
-        thermal_gun_price = self.thermal_gun.get() * 15
+        Risek_price = self.Risek.get() * 15
         total_medical = (sanitizer_price + mask_price + hand_gloves_price +
-                         syrup_price + cream_price + thermal_gun_price)
+                         Panadol_price + cream_price + Risek_price)
         self.medical_price.set("Rs. " + str(total_medical))
         medical_tax_val = round(total_medical * 0.05, 2)
         self.medical_tax.set("Rs. " + str(medical_tax_val))
@@ -316,12 +316,12 @@ class BillApp:
             self.txtarea.insert(END, f"\nMask\t\t{self.mask.get()}\t\t{self.mask.get()*5}")
         if self.hand_gloves.get() != 0:
             self.txtarea.insert(END, f"\nHand Gloves\t\t{self.hand_gloves.get()}\t\t{self.hand_gloves.get()*12}")
-        if self.syrup.get() != 0:
-            self.txtarea.insert(END, f"\nSyrup\t\t{self.syrup.get()}\t\t{self.syrup.get()*30}")
+        if self.Panadol.get() != 0:
+            self.txtarea.insert(END, f"\nPanadol\t\t{self.Panadol.get()}\t\t{self.Panadol.get()*30}")
         if self.cream.get() != 0:
             self.txtarea.insert(END, f"\nCream\t\t{self.cream.get()}\t\t{self.cream.get()*5}")
-        if self.thermal_gun.get() != 0:
-            self.txtarea.insert(END, f"\nThermal Gun\t\t{self.thermal_gun.get()}\t\t{self.thermal_gun.get()*15}")
+        if self.Risek.get() != 0:
+            self.txtarea.insert(END, f"\nRisek\t\t{self.Risek.get()}\t\t{self.Risek.get()*15}")
         # ---- Grocery Items ----
         if self.rice.get() != 0:
             self.txtarea.insert(END, f"\nRice\t\t{self.rice.get()}\t\t{self.rice.get()*10}")
@@ -391,9 +391,9 @@ class BillApp:
             self.sanitizer.set(0)
             self.mask.set(0)
             self.hand_gloves.set(0)
-            self.syrup.set(0)
+            self.Panadol.set(0)
             self.cream.set(0)
-            self.thermal_gun.set(0)
+            self.Risek.set(0)
             self.rice.set(0)
             self.food_oil.set(0)
             self.wheat.set(0)
@@ -429,3 +429,4 @@ if __name__ == "__main__":
     root = Tk()
     app = BillApp(root)
     root.mainloop()
+
